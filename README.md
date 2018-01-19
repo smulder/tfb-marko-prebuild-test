@@ -7,11 +7,15 @@ A proof of concept prebuild loader that is meant to test that prebuilding works 
   3) successfully minimizing all code
   4) not duplicating unnecissary code per page or component
   5) all dependancies are walked as would be the case on a standard runtime compile
+  
+## Modified use of arc-plugin-marko
+
+This Contains a non-standard copy of arc-plugin-marko which is forked to my account and referenced 
+directly in the package.json file. The change is in runtime.js where I pass in an actual res and req for now and use the stock res to send the rendered html directly rather than using return arc.html.get(route());
 
 ## Installation
 
-This Contains a non-standard copy of arc-plugin-marko which is forked to my account and referenced 
-directly in the package.json file. Just clone this repo then a standard:
+Just clone this repo then a standard:
 
 ```bash
 npm install
@@ -32,13 +36,13 @@ npm start
 **src/pages/home/index.js**
 ```js
 require('arc-plugin-marko/runtime').run({
-			template: require('./template'),
-			req: req,
-			res: res,
-			data: {
-				param:'Demo param'
-			}
-		});
+  template: require('./template'),
+    req: req,
+    res: res,
+    data: {
+      param:'Demo param'
+    }
+});
 ```
 
 Example of a page calling a master template:
