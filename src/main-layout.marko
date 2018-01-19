@@ -1,0 +1,60 @@
+<lasso-page package-path="./browser.json"/>
+<!doctype html>
+
+<html>
+	<head>
+		<title>${data.title || "Tree Fort Bikes"}</title>
+		<base href="/"/>
+
+		<if(data.headSection)>
+			<include(data.headSection)/>
+		</if>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta property="og:title" content="Tree Fort Bikes - Online Sales of Quality Bicycle Parts & Accessories" />
+		<meta property="og:image" content="https://i4.tfb.me/img/TFB_Share_Img.jpg" />
+		<meta name="google-site-verification" content="AYf2qdt0-bZFLRrl8mHuIqQfywA2SbcIuTLhWi-Pxc4" />
+		<lasso-head/>
+	</head>
+	<body>
+
+		<div id="midband" style=(data.pageType != 'home' && 'top:0px')>
+			<div id="headLinks" style="opacity:1">
+				<div id="mNav1" class="headNav l1"><a href="http://www.treefortbikes.com/cat/0/128/DEMOLINK" onclick='TF.navPage(event,1234);'>DEMO LINK</a></div>
+			</div>
+		</div>
+
+		<div id="logo">
+			<a href="/" onclick="TF.navHome(event);" style='display:block'><img src="https://i5.tfb.me/img/logoLg.png" srcset="https://i5.tfb.me/img/logoLg.png 1x, https://i5.tfb.me/img/logoLg@2x.png 2x" width="168" height="85" border="0" /></a>
+		</div>
+		<div id="container">
+			<div id="wrapper">
+				<if(data.bodySection)>
+					<include(data.bodySection)/>
+				</if>
+			</div>
+			<div class="bg" style=(data.hideHome?'opacity:0; display:none; background:none':'')> </div>
+
+			<!--
+			HOME PAGE CONTENT
+			-->
+			<if(!data.hideHome)>
+				<include('./pages/home/staticContent.marko',data)/>
+			</if>
+			<div id="sideNav"> </div>
+		</div>
+		<script>
+			var hideHome = '${data.hideHome}';
+			if(hideHome == 'true'){
+				hideHome = true;
+			}else{
+				hideHome = false;
+			}
+			var TFAPP = {}, TF = {}, TFInit = {
+				hideHome: hideHome,
+				pageType: '${data.pageType}'
+			};
+		</script>
+		<lasso-body/>
+
+	</body>
+</html>

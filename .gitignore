@@ -1,0 +1,19 @@
+# ignore packages installed by npm
+node_modules
+
+# put any other files you don't want to check in here,
+# such as .DS_Store (OSX), *.bak, etc.
+.DS_Store
+credentials.js
+*.pem
+*.bak
+log
+_notes
+.sass-cache
+.cache
+public/static/*
+public/static/**
+.cache/*
+BAK.*
+marko-cli-prebuild
+#*.marko.js

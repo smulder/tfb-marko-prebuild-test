@@ -1,0 +1,1 @@
+These worked better when the image was 301px tall for the @2x.jpg version

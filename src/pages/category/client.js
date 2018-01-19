@@ -1,0 +1,2 @@
+
+require('../../util/demoLoad.js');

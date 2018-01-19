@@ -1,0 +1,26 @@
+<include("../home/template.marko",
+	{
+		title: data.title,
+		links:data.links,
+		loadFromServer:true,
+		hideHome:true,
+		showNavHolder:true,
+		showLeftNav:false,
+		navFunc:data.navFunc,
+		pageType:data.pageType || 'cat'
+	})>
+	<@catSection>
+		<cat-prod-widget w-config={
+			loadFromServer:true,
+			catID:data.catID,
+			catTitle:data.catTitle
+		} />
+	</@catSection>
+	<@sideNavSection>
+		<side-nav-widget w-config={
+			loadFromServer:true,
+			links:data.links,
+			catID:data.catID
+		} />
+	</@sideNavSection>
+</include>

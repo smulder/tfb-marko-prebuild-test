@@ -1,0 +1,31 @@
+<include("../../main-layout.marko", {
+  title:data.title,
+  hideHome:data.hideHome,
+  navFunc:data.navFunc,
+  pageType:data.pageType||'home'
+})>
+
+  <@bodySection>
+    <div class="subHead"></div>
+    <div id="navPageHolder" class=(data.hideLeftNav ? 'noLeftNav':'showLeftNav') style=(data.showNavHolder?'opacity:1;display:block':'')>
+      <div class="cols">
+        <div class="col1wrap">
+          <div id="catProdList" class=(data.hideLeftNav ? 'noLeftNav':'showLeftNav')>
+			<if(data.catSection)>
+                 <include(data.catSection)/>
+               </if>
+          </div>
+
+        </div>
+        <div id="sideNav" style=(data.hideLeftNav ? 'left:-260px':'') class=(data.hideLeftNav ? 'leftNav noLeftNav':'leftNav showLeftNav')>
+          <if(data.sideNavSection)>
+            <include(data.sideNavSection)/>
+          </if>
+        </div>
+      </div>
+    </div>
+
+
+  </@bodySection>
+
+</include>

@@ -1,0 +1,31 @@
+{
+	"outputDir": "public/static",
+	"cacheDir": ".cache",
+	"urlPrefix": "static/",
+	"minify": false,
+	"plugins": [
+		"lasso-autoprefixer",
+		"lasso-marko",
+		"lasso-sass",
+		{
+			"plugin": "lasso-clean-css",
+			"config": {
+				"level": {
+					"2": {
+						"all": true
+					}
+				}
+			}
+		}
+	],
+	"bundles": [
+		{
+			"name": "cat-comp",
+			"dependencies": [
+				"require: ./src/components/cat-prod-widget"
+			]
+		}
+	],
+	"resolveCssUrls": true,
+	"bundlingEnabled": true
+}

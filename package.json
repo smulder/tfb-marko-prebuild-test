@@ -1,0 +1,32 @@
+{
+  "name": "prebuildtest",
+  "version": "0.0.1",
+  "description": "Testing Prebuilding A Marko Lasso Setup",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Scott Mulder",
+  "license": "ISC",
+  "dependencies": {
+    "@lasso/marko-taglib": "git://github.com/lasso-js/lasso-marko-taglib.git#e5beed39e6b487f825cf2775f779fa186d09e3ca",
+    "arc-plugin-marko": "github:smulder/arc-plugin-marko",
+    "async": "^2.6.0",
+    "async-writer": "^2.1.3",
+    "compression": "^1.7.1",
+    "express": "^4.16.2",
+    "fs-extra": "^5.0.0",
+    "history": "^4.7.2",
+    "lasso": "^3.0.1-1",
+    "lasso-autoprefixer": "^2.0.0",
+    "lasso-clean-css": "^2.0.0",
+    "lasso-loader": "^3.0.2",
+    "lasso-marko": "^2.4.0",
+    "lasso-marko-extras": "^2.0.2",
+    "lasso-sass": "^3.0.0",
+    "marko": "^4.7.4",
+    "morgan": "^1.9.0",
+    "node-sass": "^4.7.2"
+  }
+}

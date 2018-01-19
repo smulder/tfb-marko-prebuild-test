@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        { "type": "js", "url": "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" },
+        "require-run: ../../../public/js/history.min.js",
+	   "../../../public/css/test.css",
+        "require-run: ./client.js"
+    ]
+}
