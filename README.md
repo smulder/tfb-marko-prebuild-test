@@ -33,6 +33,15 @@ Then just launch the app with
 npm start
 ```
 
+To test the navigation which would fire the lasso-async / etc
+
+visit:
+http://localhost:8082 and click on the "DEMO LINK"
+or 
+http://localhost:8082/cat/1234 and click on the Tree Fort Logo
+
+These two pages jump back and forth to eachother
+
 **src/pages/home/index.js**
 ```js
 require('arc-plugin-marko/runtime').run({
