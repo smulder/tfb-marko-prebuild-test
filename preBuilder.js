@@ -26,7 +26,8 @@ async function build(){
 			"src/pages/category/template.marko",
 			"src/pages/home/template.marko"
 		],
-		config: lassoConfig
+		config: lassoConfig,
+		store: 'GCS'
 	}});
 }
 
