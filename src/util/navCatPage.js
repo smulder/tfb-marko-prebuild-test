@@ -50,6 +50,8 @@ module.exports = {
 
 			$.extend(TF.state,msg);
 
+			console.log('here------- in navCatPage.js about to call buildCatPage');
+
 			if($('.bg').is(':visible')){
 				$('#navPageHolder').css({opacity:0});
 				$('#navPageHolder').css({display:'block'});

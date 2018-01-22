@@ -15,20 +15,9 @@ app.set('view cache', true);
 
 app.set('trust_proxy', 1);
 
-process.env.testPrebuild = false;
+process.env.testPrebuild = true;
 
 var lassoConfig;
-var lassoConfigObj;
-
-async function resetFolders(){
-	try{
-		console.log('about to await delete folders');
-		await fs.remove(lassoConfigObj.cacheDir);
-		await fs.remove(lassoConfigObj.outputDir);
-	}catch(e){
-		console.log('rejected remove cacheDir or outputDir:', e);
-	}
-}
 
 switch(app.get('env')){
 	case 'development':
@@ -54,11 +43,7 @@ switch(app.get('env')){
 		lassoConfig = './lasso-config.json';
 		let cwd = process.cwd();
 
-		lassoConfigObj = require(require.resolve(path.resolve(cwd, lassoConfig)));
-
-		resetFolders();
-
-		require('lasso').configure(lassoConfigObj);
+		require('lasso').configure(require(require.resolve(path.resolve(cwd, lassoConfig))));
 
 		break;
 	}
