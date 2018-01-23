@@ -27,6 +27,9 @@ async function build(){
 			"src/pages/home/template.marko"
 		],
 		config: lassoConfig,
+		bucketDir: 'static',
+		bucket: 'i4.tfb.me',
+		staticUrl: 'https://i4.tfb.me',
 		store: 'GCS'
 	}});
 }
