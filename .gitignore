@@ -16,4 +16,10 @@ public/static/**
 .cache/*
 BAK.*
 marko-cli-prebuild
+*.prebuild.json
+src/pages/**/template.js
+src/pages/**/index.js
+src/pages/**/staticContent.js
+src/components/**/index.js
+src/main-layout.js
 #*.marko.js
