@@ -105,6 +105,7 @@ app.use(function(err, req, res, next){
 var server;
 var PORT = process.env.PORT || 8082;
 server = app.listen(PORT, function(){
+	console.log('process.env.testPrebuild',process.env.testPrebuild);
 	console.log('App listening on port' + PORT);
 	console.log('Press Ctrl+C to quit.');
 });

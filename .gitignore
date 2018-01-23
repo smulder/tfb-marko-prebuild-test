@@ -18,8 +18,10 @@ BAK.*
 marko-cli-prebuild
 *.prebuild.json
 src/pages/**/template.js
-src/pages/**/index.js
 src/pages/**/staticContent.js
+src/pages/**/template.marko.js
+src/pages/**/staticContent.marko.js
 src/components/**/index.js
 src/main-layout.js
+src/main-layout.marko.js
 #*.marko.js

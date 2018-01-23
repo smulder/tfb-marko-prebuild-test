@@ -1,4 +1,3 @@
-var template = require('marko').load(require.resolve('./template.marko'));
 
 module.exports = function(req, res, app, mysqlPool){
 
@@ -15,7 +14,7 @@ module.exports = function(req, res, app, mysqlPool){
 	}else{
 		res.setHeader('Content-Type', 'text/html');
 
-		if(process.env.testPrebuild){
+		if(process.env.testPrebuild === true || process.env.testPrebuild == 'true'){
 			require('arc-plugin-marko/runtime').run({
 				template: require('./template'),
 				store: 'GCS',
@@ -30,6 +29,7 @@ module.exports = function(req, res, app, mysqlPool){
 				}
 			});
 		}else{
+			var template = require('marko').load(require.resolve('./template.marko'));
 			template.render({
 				title:'Tree Fort Bikes',
 				pageType:'cat',
@@ -38,10 +38,5 @@ module.exports = function(req, res, app, mysqlPool){
 				navFunc: 'navPage'
 			}, res);
 		}
-
-
-		/*
-
-		*/
 	}
 };
